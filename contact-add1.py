@@ -18,3 +18,16 @@ contactlist = [
 Name = StringVar()
 Number = StringVar()
 frame = Frame(root)
+frame.pack(side=RIGHT)
+scroll = Scrollbar(frame, orient=VERTICAL)
+select = Listbox(frame, yscrollcommand=scroll.set, height=12)
+scroll.config (command=select.yview)
+scroll.pack(side=RIGHT, fill=Y)
+select.pack(side=LEFT,  fill=BOTH, expand=1)
+
+## Define functions
+def Selected():
+    return int(select.curselection()[0])
+
+    
+
