@@ -29,5 +29,8 @@ select.pack(side=LEFT,  fill=BOTH, expand=1)
 def Selected():
     return int(select.curselection()[0])
 
-    
+def AddContact():
+    contactlist.append([Name.get(), Number.get()])
+    Select_set()
+
 
