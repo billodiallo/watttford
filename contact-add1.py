@@ -34,3 +34,27 @@ def AddContact():
     Select_set()
 
 
+def EDIT():
+    contactlist[Selected()] = [Name.get(), Number.get()]
+    Select_set()
+
+def DELETE():
+    del contactlist[Selected()]
+    Select_set()
+def VIEW():
+    NAME, PHONE = contactlist[Selected()]
+    Name.set(NAME)
+    Number.set(PHONE)
+def EXIT():
+    root.destroy()
+def RESET():
+    Name.set('')
+    Number.set('')
+
+def Select_set() :
+    contactlist.sort()
+    select.delete(0,END)
+    for name,phone in contactlist :
+        select.insert (END, name)
+Select_set()   
+
